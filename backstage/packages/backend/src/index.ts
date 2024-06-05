@@ -23,6 +23,7 @@ backend.add(import('@backstage/plugin-auth-backend-module-guest-provider'));
 
 // For github login
 backend.add(import('@backstage/plugin-auth-backend-module-github-provider'));
+backend.add(import('@backstage/plugin-auth-backend-module-gitlab-provider'));
 
 // catalog plugin
 backend.add(import('@backstage/plugin-catalog-backend/alpha'));

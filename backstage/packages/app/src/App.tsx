@@ -40,7 +40,9 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/
 import {
   SignInProviderConfig
 } from '@backstage/core-components';
+
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
+import { gitlabAuthApiRef } from '@backstage/core-plugin-api';
 
 
 const githubProvider: SignInProviderConfig = {
@@ -48,6 +50,13 @@ const githubProvider: SignInProviderConfig = {
   title: 'GitHub',
   message: 'Sign in using GitHub',
   apiRef: githubAuthApiRef,
+};
+
+const gitlabProvider: SignInProviderConfig = {
+  id: 'gitlab-auth-provider',
+  title: 'GitLab',
+  message: 'Sign in using GitLab',
+  apiRef: gitlabAuthApiRef,
 };
 
 const app = createApp({
@@ -70,7 +79,7 @@ const app = createApp({
     });
   },
   components: {
-    SignInPage: props => <SignInPage {...props} auto provider={githubProvider} />,
+    SignInPage: props => <SignInPage {...props} auto provider={gitlabProvider} />,
   },
 });
 
